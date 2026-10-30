@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Maps Prospect Finder",
+  "version": "0.1.0",
+  "description": "Mengumpulkan data bisnis dari Google Maps untuk riset calon klien.",
+  "permissions": ["storage", "downloads", "tabs", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://*.google.com/maps/*",
+    "https://*.google.co.id/maps/*",
+    "https://maps.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Maps Prospect Finder",
+    "default_popup": "popup.html"
+  }
+}

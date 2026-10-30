@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps Prospect Finder</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      </div>
+      <h2>Maps Scraper</h2>
+    </div>
+    
+    <div class="instruction">
+      Cari bisnis di Google Maps terlebih dahulu, lalu klik tombol di bawah untuk mulai menyalin data.
+    </div>
+
+    <div class="form-group">
+      <label for="target">Batas Maksimal Data</label>
+      <select id="target">
+        <option value="20">Ambil 20 Data</option>
+        <option value="50">Ambil 50 Data</option>
+        <option value="100">Ambil 100 Data</option>
+        <option value="999">Ambil Semua Data</option>
+      </select>
+    </div>
+
+    <button id="start" class="btn-primary">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Mulai Scrape Data
+    </button>
+    
+    <div class="actions" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+      <button id="export-csv" class="btn-secondary">Export CSV</button>
+      <button id="export-html" class="btn-secondary">Export HTML</button>
+    </div>
+    <button id="stop" class="btn-secondary" style="width: 100%; margin-bottom: 20px; color: var(--danger);">Stop Pencarian</button>
+
+    <div class="status-container">
+      <div class="status-header">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status">Siap digunakan</span>
+        <span id="count" class="badge">0</span>
+      </div>
+      <div class="progress-bg">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+    </div>
+    
+    <div id="error" class="error-msg" hidden></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
